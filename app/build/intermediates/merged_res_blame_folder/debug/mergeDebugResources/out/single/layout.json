@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-mergeDebugResources-38:\\layout\\fragment_map.xml",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\layout\\fragment_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-mergeDebugResources-38:\\layout\\fragment_add_location.xml",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\layout\\fragment_add_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-mergeDebugResources-38:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.trackify.app-mergeDebugResources-38:/layout/fragment_map.xml",
+        "source": "com.trackify.app-main-41:/layout/fragment_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-mergeDebugResources-38:\\layout\\item_location.xml",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\layout\\item_location.xml"
+    },
+    {
+        "merged": "com.trackify.app-mergeDebugResources-38:/layout/fragment_add_location.xml",
+        "source": "com.trackify.app-main-41:/layout/fragment_add_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-mergeDebugResources-38:\\layout\\fragment_locations.xml",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\layout\\fragment_locations.xml"
+    }
+]

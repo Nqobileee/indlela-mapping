@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\layout_fragment_locations.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\layout\\fragment_locations.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\layout_item_location.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\layout\\item_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\layout_fragment_map.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\layout\\fragment_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\layout_fragment_add_location.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\layout\\fragment_add_location.xml"
+    },
+    {
+        "merged": "com.trackify.app-debug-39:/layout_fragment_map.xml.flat",
+        "source": "com.trackify.app-main-41:/layout/fragment_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.trackify.app-debug-39:/layout_fragment_add_location.xml.flat",
+        "source": "com.trackify.app-main-41:/layout/fragment_add_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\color_nav_icon_color.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\color\\nav_icon_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-debug-39:\\drawable_ic_notification.xml.flat",
+        "source": "C:\\Users\\nqobi\\.gradle\\daemon\\8.5\\com.trackify.app-main-41:\\drawable\\ic_notification.xml"
+    }
+]
