@@ -1,0 +1,29 @@
+# Local environment — contains API keys, never commit
+.env
+local.properties
+
+# Android build outputs
+*.apk
+*.aab
+*.dex
+build/
+app/build/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+.gradle/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# Keystore files
+*.jks
+*.keystore
+
+# OS
+.DS_Store
+Thumbs.db
