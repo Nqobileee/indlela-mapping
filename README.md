@@ -1,14 +1,18 @@
-# Trackify
+# Android Geofence Alerts
 
-A native Android location tracking app that lets you save places, set geofences, and receive notifications when you arrive at or leave a saved location.
+**Trackify** — A native Android app to save places on a map, set geofence boundaries, and get notifications when you arrive at or leave a saved location.
+
+## Overview
+
+Trackify combines live GPS map tracking with local geofencing. Save named locations with a custom radius, and the app alerts you on entry and exit—even when running in the background. All saved places are stored on-device with Room; no account or backend required.
 
 ## Features
 
-- **Live Map Tracking** — Real-time GPS display on an interactive Google Map with 5-second location updates
-- **Saved Locations** — Store custom locations with names and configurable geofence radii
-- **Geofencing Alerts** — Automatic push notifications when you enter or leave a saved location boundary
-- **Navigation** — Open turn-by-turn directions to any saved location via Google Maps
-- **Offline Storage** — All saved locations persist locally using a Room database
+- **Live Map Tracking** — Real-time GPS on Google Maps with periodic location updates
+- **Saved Locations** — Name and store places with configurable geofence radii
+- **Geofencing Alerts** — Notifications on enter/exit via Google Play Services Location
+- **Navigation** — Open turn-by-turn directions to any saved place in Google Maps
+- **Offline Storage** — Persistent local database (Room / SQLite)
 
 ## Tech Stack
 
@@ -27,23 +31,26 @@ A native Android location tracking app that lets you save places, set geofences,
 
 ```
 trackify/
-├── app/src/main/
-│   ├── java/com/trackify/app/
-│   │   ├── MainActivity.java               # Entry point, bottom navigation controller
-│   │   ├── fragments/
-│   │   │   ├── MapFragment.java            # Live map, current location, directions
-│   │   │   ├── LocationsFragment.java      # List of saved locations
-│   │   │   └── AddLocationFragment.java    # Location picker + geofence setup
-│   │   ├── database/
-│   │   │   ├── AppDatabase.java            # Room database singleton
-│   │   │   ├── LocationDao.java            # DAO (CRUD operations)
-│   │   │   └── SavedLocation.java          # Entity model
-│   │   ├── adapters/
-│   │   │   └── LocationAdapter.java        # RecyclerView adapter
-│   │   └── receivers/
-│   │       └── GeofenceBroadcastReceiver.java  # Handles geofence entry/exit events
-│   ├── res/                                # Layouts, drawables, values, menus
-│   └── AndroidManifest.xml
+├── .env.example              # API key template (copy to .env locally)
+├── app/
+│   ├── build.gradle          # Injects MAPS_API_KEY at build time
+│   └── src/main/
+│       ├── java/com/trackify/app/
+│       │   ├── MainActivity.java
+│       │   ├── fragments/
+│       │   │   ├── MapFragment.java
+│       │   │   ├── LocationsFragment.java
+│       │   │   └── AddLocationFragment.java
+│       │   ├── database/
+│       │   │   ├── AppDatabase.java
+│       │   │   ├── LocationDao.java
+│       │   │   └── SavedLocation.java
+│       │   ├── adapters/
+│       │   │   └── LocationAdapter.java
+│       │   └── receivers/
+│       │       └── GeofenceBroadcastReceiver.java
+│       ├── res/
+│       └── AndroidManifest.xml
 ├── build.gradle
 ├── settings.gradle
 └── gradle.properties
@@ -54,9 +61,7 @@ trackify/
 - **Android Studio** Hedgehog (2023.1.1) or newer
 - **JDK 11** or newer
 - **Android SDK** with API Level 34 installed
-- A **Google Maps API key** with the following APIs enabled:
-  - Maps SDK for Android
-  - Geolocation API
+- A **Google Maps API key** with **Maps SDK for Android** enabled ([Google Cloud Console](https://console.cloud.google.com))
 
 ## Setup
 
@@ -67,42 +72,54 @@ git clone https://github.com/Edith-Nqobile/trackify.git
 cd trackify
 ```
 
-### 2. Configure your Google Maps API key
+### 2. Add your Google Maps API key
 
-Copy the example env file and add your key (`.env` is gitignored):
+API keys are **not** stored in source code. Provide yours via `.env` or `local.properties` (both are gitignored).
+
+**Option A — `.env` (recommended)**
 
 ```bash
+# macOS / Linux / Git Bash
 cp .env.example .env
 ```
+
+```powershell
+# Windows PowerShell
+Copy-Item .env.example .env
+```
+
+Edit `.env`:
 
 ```env
 google_maps_api_key=YOUR_API_KEY_HERE
 ```
 
-Alternatively, add the key to `local.properties` (also gitignored):
+**Option B — `local.properties`**
+
+Add to `local.properties` at the project root (same file used for `sdk.dir`):
 
 ```properties
 MAPS_API_KEY=YOUR_API_KEY_HERE
 ```
 
-Get a free key at [Google Cloud Console](https://console.cloud.google.com) and enable **Maps SDK for Android**.
+`local.properties` takes precedence over `.env` if both are set.
 
-### 3. Set your local Android SDK path
+> **Security:** Never commit `.env`, `local.properties`, or API keys. Restrict your key in Google Cloud (Android app restrictions: package `com.trackify.app` + signing certificate SHA-1).
 
-Create `local.properties` at the project root (this file is not committed):
+### 3. Android SDK path
+
+Android Studio creates this automatically. If needed, add to `local.properties`:
 
 ```properties
-sdk.dir=/path/to/your/Android/Sdk
+sdk.dir=C\:\\Users\\YourName\\AppData\\Local\\Android\\Sdk
 ```
-
-Android Studio does this automatically when you open the project.
 
 ## Build & Run
 
 ### Android Studio (recommended)
 
 1. Open the project in Android Studio
-2. Connect a physical device or start an emulator (API 26+)
+2. Connect a device or start an emulator (API 26+)
 3. Click **Run** or press `Shift + F10`
 
 ### Command line
@@ -118,35 +135,39 @@ Android Studio does this automatically when you open the project.
 ./gradlew assembleRelease
 ```
 
-## Permissions
+On Windows, use `gradlew.bat` instead of `./gradlew`.
 
-The app requests the following permissions at runtime:
+## Permissions
 
 | Permission | Purpose |
 |---|---|
-| `ACCESS_FINE_LOCATION` | Precise GPS for map tracking and location saving |
-| `ACCESS_COARSE_LOCATION` | Fallback network-based location |
-| `ACCESS_BACKGROUND_LOCATION` | Geofence monitoring while app is in the background |
-| `POST_NOTIFICATIONS` | Geofence entry/exit alerts (Android 13+) |
+| `ACCESS_FINE_LOCATION` | Precise GPS for map tracking and saving places |
+| `ACCESS_COARSE_LOCATION` | Network-based location fallback |
+| `ACCESS_BACKGROUND_LOCATION` | Geofence monitoring while the app is in the background |
+| `POST_NOTIFICATIONS` | Entry/exit alerts (Android 13+) |
 
-Background location is requested separately after foreground location is granted, following Android best practices.
+Background location is requested after foreground location is granted, following Android best practices.
 
 ## How It Works
 
-### Saving a Location
-1. Tap **Add** in the bottom navigation bar
-2. Tap anywhere on the map to place a pin, or tap **Use Current Location**
-3. Optionally enter latitude/longitude manually
-4. Give the location a name and set the geofence radius using the slider (default: 200 m)
-5. Tap **Save** — the location is stored in the local Room database and a geofence is registered
+### Saving a location
 
-### Geofence Notifications
-`GeofenceBroadcastReceiver` listens for `GEOFENCE_TRANSITION_ENTER` and `GEOFENCE_TRANSITION_EXIT` events from the Google Location Services API and fires a high-priority notification:
+1. Tap **Add** in the bottom navigation bar
+2. Tap the map to place a pin, or tap **Use Current Location**
+3. Optionally enter latitude/longitude manually
+4. Name the place and set the geofence radius (default: 200 m)
+5. Tap **Save** — data is stored in Room and a geofence is registered
+
+### Geofence notifications
+
+`GeofenceBroadcastReceiver` handles `GEOFENCE_TRANSITION_ENTER` and `GEOFENCE_TRANSITION_EXIT` from the Google Location Services API:
+
 - **Arrived at [Name]** on entry
 - **Left [Name]** on exit
 
 ### Navigation
-From the **Locations** list, tap **Navigate** on any saved location to open Google Maps with directions pre-filled from your current position.
+
+From **Locations**, tap **Navigate** on any saved place to open Google Maps with directions from your current position.
 
 ## Database Schema
 
@@ -159,7 +180,7 @@ From the **Locations** list, tap **Navigate** on any saved location to open Goog
 | `latitude` | REAL | Decimal degrees (-90 to 90) |
 | `longitude` | REAL | Decimal degrees (-180 to 180) |
 | `radius` | REAL | Geofence radius in metres |
-| `geofenceId` | TEXT | Unique ID used with Google Geofencing API |
+| `geofenceId` | TEXT | Unique ID for the Google Geofencing API |
 
 ## Dependencies
 
