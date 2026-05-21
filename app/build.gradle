@@ -2,6 +2,30 @@ plugins {
     id 'com.android.application'
 }
 
+def getMapsApiKey() {
+    def localProps = new Properties()
+    def localPropsFile = rootProject.file('local.properties')
+    if (localPropsFile.exists()) {
+        localPropsFile.withInputStream { localProps.load(it) }
+    }
+    def key = localProps.getProperty('MAPS_API_KEY')
+            ?: localProps.getProperty('google_maps_api_key')
+
+    if (!key) {
+        def envFile = rootProject.file('.env')
+        if (envFile.exists()) {
+            envFile.eachLine { line ->
+                def trimmed = line.trim()
+                if (!trimmed || trimmed.startsWith('#')) return
+                if (trimmed.startsWith('google_maps_api_key=')) {
+                    key = trimmed.substring('google_maps_api_key='.length()).trim()
+                }
+            }
+        }
+    }
+    return key ?: ''
+}
+
 android {
     namespace 'com.trackify.app'
     compileSdk 34
@@ -13,6 +37,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [MAPS_API_KEY: getMapsApiKey()]
     }
 
     buildTypes {

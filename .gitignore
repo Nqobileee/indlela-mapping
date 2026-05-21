@@ -1,5 +1,11 @@
-# Local environment — contains API keys, never commit
+# Local environment and secrets — never commit
 .env
+.env.*
+!.env.example
+*.env
+secrets.properties
+
+# Android SDK path (machine-specific)
 local.properties
 
 # Android build outputs
@@ -18,7 +24,6 @@ app/build/
 captures/
 .externalNativeBuild/
 .cxx/
-local.properties
 
 # Keystore files
 *.jks

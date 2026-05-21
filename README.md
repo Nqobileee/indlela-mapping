@@ -69,19 +69,23 @@ cd trackify
 
 ### 2. Configure your Google Maps API key
 
-Open [app/src/main/AndroidManifest.xml](app/src/main/AndroidManifest.xml) and replace the placeholder value:
+Copy the example env file and add your key (`.env` is gitignored):
 
-```xml
-<meta-data
-    android:name="com.google.android.geo.API_KEY"
-    android:value="YOUR_API_KEY_HERE" />
+```bash
+cp .env.example .env
 ```
-
-Alternatively, set it via a `.env` file at the project root:
 
 ```env
 google_maps_api_key=YOUR_API_KEY_HERE
 ```
+
+Alternatively, add the key to `local.properties` (also gitignored):
+
+```properties
+MAPS_API_KEY=YOUR_API_KEY_HERE
+```
+
+Get a free key at [Google Cloud Console](https://console.cloud.google.com) and enable **Maps SDK for Android**.
 
 ### 3. Set your local Android SDK path
 

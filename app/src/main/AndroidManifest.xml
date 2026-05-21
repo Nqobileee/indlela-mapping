@@ -17,14 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trackify">
 
-        <!--
-            STEP 1: Replace the value below with your Google Maps API key.
-            Get one free at: https://console.cloud.google.com
-            Enable "Maps SDK for Android" in your project.
-        -->
+        <!-- API key is injected at build time from .env or local.properties — see README -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD4Nspz0Eh9eur_aU5VfdbVDZbXGtPb4N8" />
+            android:value="${MAPS_API_KEY}" />
 
         <activity
             android:name=".MainActivity"
