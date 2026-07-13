@@ -1,0 +1,34 @@
+# Local environment and secrets — never commit
+.env
+.env.*
+!.env.example
+*.env
+secrets.properties
+
+# Android SDK path (machine-specific)
+local.properties
+
+# Android build outputs
+*.apk
+*.aab
+*.dex
+build/
+app/build/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+.gradle/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Keystore files
+*.jks
+*.keystore
+
+# OS
+.DS_Store
+Thumbs.db
