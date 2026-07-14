@@ -1,4 +1,4 @@
-package com.trackify.app.fragments;
+package com.inzila.mapping.fragments;
 
 import android.Manifest;
 import android.app.PendingIntent;
@@ -18,7 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofencingClient;
-import com.trackify.app.R;
+import com.inzila.mapping.R;
 import com.google.android.gms.location.GeofencingRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -27,10 +27,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.trackify.app.database.AppDatabase;
-import com.trackify.app.database.SavedLocation;
-import com.trackify.app.databinding.FragmentAddLocationBinding;
-import com.trackify.app.receivers.GeofenceBroadcastReceiver;
+import com.inzila.mapping.database.AppDatabase;
+import com.inzila.mapping.database.SavedLocation;
+import com.inzila.mapping.databinding.FragmentAddLocationBinding;
+import com.inzila.mapping.receivers.GeofenceBroadcastReceiver;
 
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;

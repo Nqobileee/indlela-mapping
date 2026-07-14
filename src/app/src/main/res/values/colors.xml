@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#1565C0</color>
-    <color name="primary_dark">#0D47A1</color>
-    <color name="primary_light">#E3F2FD</color>
-    <color name="accent">#FF6D00</color>
-    <color name="background">#F4F6F8</color>
+    <!-- Inzila Mapping nature palette: forest greens, earth browns and clay
+         orange from the logo's underground layer, with map blue as support -->
+    <color name="primary">#2E7D32</color>          <!-- forest green -->
+    <color name="primary_dark">#1B5E20</color>     <!-- deep forest -->
+    <color name="primary_light">#E8F5E9</color>    <!-- pale leaf -->
+    <color name="accent">#EF6C00</color>           <!-- clay orange -->
+    <color name="earth_brown">#5D4037</color>      <!-- soil -->
+    <color name="map_blue">#1565C0</color>         <!-- location pin blue -->
+    <color name="background">#F4F7F1</color>       <!-- natural off-white -->
     <color name="white">#FFFFFF</color>
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
-    <color name="divider">#BDBDBD</color>
+    <color name="text_primary">#212B21</color>
+    <color name="text_secondary">#6B7568</color>
+    <color name="divider">#C5CDC2</color>
     <color name="error">#D32F2F</color>
 
     <!-- Bottom nav selector handled by nav_icon_color -->
-    <color name="nav_selected">#1565C0</color>
-    <color name="nav_unselected">#9E9E9E</color>
+    <color name="nav_selected">#2E7D32</color>
+    <color name="nav_unselected">#9AA396</color>
 </resources>

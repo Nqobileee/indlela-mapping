@@ -1,4 +1,4 @@
-package com.trackify.app.adapters;
+package com.inzila.mapping.adapters;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.trackify.app.database.SavedLocation;
-import com.trackify.app.databinding.ItemLocationBinding;
+import com.inzila.mapping.database.SavedLocation;
+import com.inzila.mapping.databinding.ItemLocationBinding;
 
 import java.util.ArrayList;
 import java.util.List;

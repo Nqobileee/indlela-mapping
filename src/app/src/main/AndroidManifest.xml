@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Trackify">
+        android:theme="@style/Theme.InzilaMapping">
 
         <!-- API key is injected at build time from .env or local.properties — see README -->
         <meta-data

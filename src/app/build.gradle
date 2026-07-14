@@ -27,11 +27,11 @@ def getMapsApiKey() {
 }
 
 android {
-    namespace 'com.trackify.app'
+    namespace 'com.inzila.mapping'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.trackify.app"
+        applicationId "com.inzila.mapping"
         minSdk 26
         targetSdk 34
         versionCode 1

@@ -1,4 +1,4 @@
-package com.trackify.app.fragments;
+package com.inzila.mapping.fragments;
 
 import android.Manifest;
 import android.content.Context;
@@ -32,10 +32,10 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.trackify.app.R;
-import com.trackify.app.database.AppDatabase;
-import com.trackify.app.database.SavedLocation;
-import com.trackify.app.databinding.FragmentMapBinding;
+import com.inzila.mapping.R;
+import com.inzila.mapping.database.AppDatabase;
+import com.inzila.mapping.database.SavedLocation;
+import com.inzila.mapping.databinding.FragmentMapBinding;
 
 import java.util.List;
 import java.util.Locale;

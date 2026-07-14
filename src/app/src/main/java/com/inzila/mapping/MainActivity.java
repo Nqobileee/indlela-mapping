@@ -1,4 +1,4 @@
-package com.trackify.app;
+package com.inzila.mapping;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -12,10 +12,10 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.trackify.app.databinding.ActivityMainBinding;
-import com.trackify.app.fragments.AddLocationFragment;
-import com.trackify.app.fragments.LocationsFragment;
-import com.trackify.app.fragments.MapFragment;
+import com.inzila.mapping.databinding.ActivityMainBinding;
+import com.inzila.mapping.fragments.AddLocationFragment;
+import com.inzila.mapping.fragments.LocationsFragment;
+import com.inzila.mapping.fragments.MapFragment;
 
 public class MainActivity extends AppCompatActivity {
 

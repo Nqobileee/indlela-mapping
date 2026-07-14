@@ -1,18 +1,31 @@
-# Android Geofence Alerts
+# Inzila Mapping
 
-**Trackify** — A native Android app to save places on a map, set geofence boundaries, and get notifications when you arrive at or leave a saved location.
+**Inzila Mapping** — *Smart Mapping. Better Infrastructure.* A native Android app to map and save infrastructure locations, set geofence boundaries, and get notifications when field teams arrive at or leave a mapped site.
 
 ## Overview
 
-Trackify combines live GPS map tracking with local geofencing. Save named locations with a custom radius, and the app alerts you on entry and exit—even when running in the background. All saved places are stored on-device with Room; no account or backend required.
+Inzila Mapping combines live GPS map tracking with local geofencing. Save named locations with a custom radius, and the app alerts you on entry and exit—even when running in the background. All saved places are stored on-device with Room, so records remain available in the field; no account or backend required.
 
 ## Features
 
 - **Live Map Tracking** — Real-time GPS on Google Maps with periodic location updates
-- **Saved Locations** — Name and store places with configurable geofence radii
+- **Saved Locations** — Name and store mapped sites with configurable geofence radii
 - **Geofencing Alerts** — Notifications on enter/exit via Google Play Services Location
-- **Navigation** — Open turn-by-turn directions to any saved place in Google Maps
+- **Navigation** — Open turn-by-turn directions to any saved site in Google Maps
 - **Offline Storage** — Persistent local database (Room / SQLite)
+
+## Brand & Theme
+
+The app follows the Inzila nature palette drawn from the logo's above/below-ground motif:
+
+| Role | Colour | Hex |
+|---|---|---|
+| Primary | Forest green | `#2E7D32` |
+| Primary dark | Deep forest | `#1B5E20` |
+| Accent | Clay orange | `#EF6C00` |
+| Earth | Soil brown | `#5D4037` |
+| Support | Map pin blue | `#1565C0` |
+| Background | Natural off-white | `#F4F7F1` |
 
 ## Tech Stack
 
@@ -30,12 +43,12 @@ Trackify combines live GPS map tracking with local geofencing. Save named locati
 ## Project Structure
 
 ```
-trackify/
+src/
 ├── .env.example              # API key template (copy to .env locally)
 ├── app/
 │   ├── build.gradle          # Injects MAPS_API_KEY at build time
 │   └── src/main/
-│       ├── java/com/trackify/app/
+│       ├── java/com/inzila/mapping/
 │       │   ├── MainActivity.java
 │       │   ├── fragments/
 │       │   │   ├── MapFragment.java
@@ -68,8 +81,8 @@ trackify/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Edith-Nqobile/trackify.git
-cd trackify
+git clone https://github.com/Nqobileee/indlela-mapping.git
+cd indlela-mapping/src
 ```
 
 ### 2. Add your Google Maps API key
@@ -104,7 +117,7 @@ MAPS_API_KEY=YOUR_API_KEY_HERE
 
 `local.properties` takes precedence over `.env` if both are set.
 
-> **Security:** Never commit `.env`, `local.properties`, or API keys. Restrict your key in Google Cloud (Android app restrictions: package `com.trackify.app` + signing certificate SHA-1).
+> **Security:** Never commit `.env`, `local.properties`, or API keys. Restrict your key in Google Cloud (Android app restrictions: package `com.inzila.mapping` + signing certificate SHA-1).
 
 ### 3. Android SDK path
 
@@ -141,7 +154,7 @@ On Windows, use `gradlew.bat` instead of `./gradlew`.
 
 | Permission | Purpose |
 |---|---|
-| `ACCESS_FINE_LOCATION` | Precise GPS for map tracking and saving places |
+| `ACCESS_FINE_LOCATION` | Precise GPS for map tracking and saving sites |
 | `ACCESS_COARSE_LOCATION` | Network-based location fallback |
 | `ACCESS_BACKGROUND_LOCATION` | Geofence monitoring while the app is in the background |
 | `POST_NOTIFICATIONS` | Entry/exit alerts (Android 13+) |

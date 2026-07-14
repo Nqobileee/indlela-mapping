@@ -1,1 +1,1 @@
--keep class com.trackify.app.database.** { *; }
+-keep class com.inzila.mapping.database.** { *; }

@@ -1,4 +1,4 @@
-package com.trackify.app.receivers;
+package com.inzila.mapping.receivers;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -11,14 +11,14 @@ import androidx.core.app.NotificationCompat;
 
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofencingEvent;
-import com.trackify.app.MainActivity;
-import com.trackify.app.R;
+import com.inzila.mapping.MainActivity;
+import com.inzila.mapping.R;
 
 import java.util.List;
 
 public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
-    private static final String CHANNEL_ID = "trackify_geofence_alerts";
+    private static final String CHANNEL_ID = "inzila_geofence_alerts";
     private static final int NOTIFICATION_ID = 42;
 
     @Override

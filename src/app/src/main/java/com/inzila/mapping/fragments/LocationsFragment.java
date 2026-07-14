@@ -1,4 +1,4 @@
-package com.trackify.app.fragments;
+package com.inzila.mapping.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,10 +13,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.gms.location.LocationServices;
-import com.trackify.app.adapters.LocationAdapter;
-import com.trackify.app.database.AppDatabase;
-import com.trackify.app.database.SavedLocation;
-import com.trackify.app.databinding.FragmentLocationsBinding;
+import com.inzila.mapping.adapters.LocationAdapter;
+import com.inzila.mapping.database.AppDatabase;
+import com.inzila.mapping.database.SavedLocation;
+import com.inzila.mapping.databinding.FragmentLocationsBinding;
 
 import java.util.Collections;
 import java.util.concurrent.ExecutorService;

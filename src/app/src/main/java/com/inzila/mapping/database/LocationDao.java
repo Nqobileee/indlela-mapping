@@ -1,4 +1,4 @@
-package com.trackify.app.database;
+package com.inzila.mapping.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

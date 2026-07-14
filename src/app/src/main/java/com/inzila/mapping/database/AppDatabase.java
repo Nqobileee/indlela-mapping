@@ -1,4 +1,4 @@
-package com.trackify.app.database;
+package com.inzila.mapping.database;
 
 import android.content.Context;
 
@@ -20,7 +20,7 @@ public abstract class AppDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(
                             context.getApplicationContext(),
                             AppDatabase.class,
-                            "trackify_db"
+                            "inzila_mapping_db"
                     ).build();
                 }
             }
